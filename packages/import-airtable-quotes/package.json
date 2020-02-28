@@ -1,0 +1,13 @@
+{
+  "name": "import-airtable-quotes",
+  "version": "0.1.0",
+  "main": "src/importAirtableQuotes.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node src/importAirtableQuotes.js"
+  },
+  "dependencies": {
+    "csv-parse": "^4.8.6",
+    "quotes-api-utils": "^0.1.0"
+  }
+}

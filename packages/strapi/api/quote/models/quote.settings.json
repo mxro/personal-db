@@ -1,0 +1,44 @@
+{
+  "connection": "default",
+  "collectionName": "quotes",
+  "info": {
+    "name": "Quote"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "Author": {
+      "type": "string"
+    },
+    "Book": {
+      "type": "string"
+    },
+    "RawSource": {
+      "type": "string"
+    },
+    "Location": {
+      "type": "string"
+    },
+    "Link": {
+      "type": "string"
+    },
+    "Attachments": {
+      "collection": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
+    },
+    "tags": {
+      "collection": "tag",
+      "via": "quotes"
+    },
+    "Collected": {
+      "type": "datetime"
+    },
+    "Quote": {
+      "type": "richtext"
+    }
+  }
+}

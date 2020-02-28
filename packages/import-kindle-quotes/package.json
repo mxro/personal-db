@@ -1,0 +1,16 @@
+{
+  "name": "import-kindle-quotes",
+  "version": "0.1.0",
+  "main": "src/importKindleQuotes.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node src/importKindleQuotes.js"
+  },
+  "bin": {
+    "import-kindle-quotes": "src/importKindleQuotes.js"
+  },
+  "dependencies": {
+    "kindle-citation-extractor": "^0.1.3",
+    "quotes-api-utils": "^0.1.0"
+  }
+}
