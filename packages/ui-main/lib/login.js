@@ -1,9 +1,8 @@
 import axios from 'axios';
 import Cookies from 'js-cookie';
 
-export default async function login({ email, password }) {
+export async function login({ email, password }) {
 
-  // Request API.
   const { status, data } = await axios
     .request({
       url: 'http://localhost:1337/auth/local',
@@ -25,3 +24,26 @@ export default async function login({ email, password }) {
   Cookies.set('jwt', jwt);
   return user;
 };
+
+export async function loginWithToken({ jwt }) {
+
+  const { status, data } = await axios
+    .request({
+      url: 'http://localhost:1337/users/me',
+      method: 'get',
+      headers: {
+        Authorization: `Bearer ${jwt}`,
+      },
+      validateStatus: () => true, // accept all reponse codes
+    });
+
+  if (status !== 200) {
+    const { message } = data;
+    console.log('Invalid token');
+    console.log(message);
+    Cookies.set('jwt', '');
+    return undefined;
+  }
+
+  return data;
+}

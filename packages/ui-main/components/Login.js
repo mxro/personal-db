@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button';
 import Router from 'next/router';
 import UserContext from '../lib/userContext';
 
-import login from '../lib/login';
+import { login } from '../lib/login';
 
 export default function Login() {
 

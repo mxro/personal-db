@@ -1,11 +1,20 @@
-import Link from 'next/Link';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
+import MyNavbar from '../components/MyNavbar';
 
 export default function Index() {
   return (
-    <div>
-      <Link href="/login">
-        <a>Login</a>
-      </Link>
-    </div>
+    <>
+      <MyNavbar></MyNavbar>
+      <Container>
+        <Col>
+          <Row>
+
+          </Row>
+        </Col>
+      </Container >
+    </>
   );
 }
