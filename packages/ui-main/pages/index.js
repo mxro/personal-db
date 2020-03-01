@@ -1,20 +1,25 @@
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+
 
 import MyNavbar from '../components/MyNavbar';
+import UserContext from '../lib/userContext';
+import Dashboard from '../components/Dashboard';
+import Landing from '../components/Landing';
 
 export default function Index() {
+
   return (
     <>
       <MyNavbar></MyNavbar>
-      <Container>
-        <Col>
-          <Row>
 
-          </Row>
-        </Col>
-      </Container >
+      <UserContext.Consumer >
+        {([userContext,]) => {
+          if (!userContext) {
+            return <Landing />
+          }
+
+          return <Dashboard />;
+        }}
+      </UserContext.Consumer>
     </>
   );
 }

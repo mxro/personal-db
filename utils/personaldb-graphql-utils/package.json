@@ -1,5 +1,5 @@
 {
-  "name": "graphql-utils",
+  "name": "personaldb-graphql-utils",
   "version": "0.1.0",
   "main": "src/graphQLUtils.js",
   "license": "MIT",

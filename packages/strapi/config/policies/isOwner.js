@@ -8,6 +8,7 @@
 var pluralize = require('pluralize')
 
 module.exports = async (ctx, next) => {
+
   try {
 
     let errMsg = "You are not allowed to perform this action.";
