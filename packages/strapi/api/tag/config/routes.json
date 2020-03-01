@@ -29,7 +29,9 @@
       "path": "/tags",
       "handler": "tag.create",
       "config": {
-        "policies": []
+        "policies": [
+          "global.isOwner"
+        ]
       }
     },
     {
@@ -37,7 +39,9 @@
       "path": "/tags/:id",
       "handler": "tag.update",
       "config": {
-        "policies": []
+        "policies": [
+          "global.isOwner"
+        ]
       }
     },
     {
@@ -45,7 +49,9 @@
       "path": "/tags/:id",
       "handler": "tag.delete",
       "config": {
-        "policies": []
+        "policies": [
+          "global.isOwner"
+        ]
       }
     }
   ]

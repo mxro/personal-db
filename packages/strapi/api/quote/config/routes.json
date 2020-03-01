@@ -29,7 +29,9 @@
       "path": "/quotes",
       "handler": "quote.create",
       "config": {
-        "policies": []
+        "policies": [
+          "global.isOwner"
+        ]
       }
     },
     {
@@ -37,7 +39,9 @@
       "path": "/quotes/:id",
       "handler": "quote.update",
       "config": {
-        "policies": []
+        "policies": [
+          "global.isOwner"
+        ]
       }
     },
     {
@@ -45,7 +49,9 @@
       "path": "/quotes/:id",
       "handler": "quote.delete",
       "config": {
-        "policies": []
+        "policies": [
+          "global.isOwner"
+        ]
       }
     }
   ]

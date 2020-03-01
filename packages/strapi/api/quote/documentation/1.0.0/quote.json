@@ -604,6 +604,9 @@
                   "items": {
                     "type": "string"
                   }
+                },
+                "owner": {
+                  "type": "string"
                 }
               }
             }
@@ -613,6 +616,42 @@
           },
           "Quote": {
             "type": "string"
+          },
+          "owner": {
+            "required": [
+              "id",
+              "username",
+              "email"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "username": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "provider": {
+                "type": "string"
+              },
+              "password": {
+                "type": "string"
+              },
+              "resetPasswordToken": {
+                "type": "string"
+              },
+              "confirmed": {
+                "type": "boolean"
+              },
+              "blocked": {
+                "type": "boolean"
+              },
+              "role": {
+                "type": "string"
+              }
+            }
           }
         }
       },
@@ -643,6 +682,9 @@
             "type": "datetime"
           },
           "Quote": {
+            "type": "string"
+          },
+          "owner": {
             "type": "string"
           }
         }

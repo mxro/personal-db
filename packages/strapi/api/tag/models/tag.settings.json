@@ -16,6 +16,10 @@
       "via": "tags",
       "collection": "quote",
       "dominant": true
+    },
+    "owner": {
+      "plugin": "users-permissions",
+      "model": "user"
     }
   }
 }
