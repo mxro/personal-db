@@ -2,8 +2,20 @@ import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Link from 'next/link';
 import UserContext from '../lib/userContext';
+import Router from 'next/router';
+
+import Cookies from 'js-cookie';
+import { useContext } from 'react';
 
 function MyNavbar() {
+
+  const [setUserContext,] = useContext(UserContext);
+
+  function onLogout() {
+    Cookies.set('jwt', '');
+    setUserContext(undefined);
+    Router.push('/login');
+  }
 
   return <Navbar>
     <Link href="/index" passHref>
@@ -14,9 +26,12 @@ function MyNavbar() {
       <UserContext.Consumer >
         {([userContext,]) => {
           if (userContext) {
-            return <Navbar.Text>
-              Signed in as: {userContext.username}
-            </Navbar.Text>
+            return <Nav>
+              <Navbar.Text>
+                Signed in as: {userContext.username}
+              </Navbar.Text>
+              <Nav.Link onClick={onLogout}>Logout</Nav.Link>
+            </Nav>
           }
 
           return <Nav>

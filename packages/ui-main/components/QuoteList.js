@@ -1,10 +1,10 @@
 import gql from 'graphql-tag';
 import { useQuery } from '@apollo/react-hooks';
 
-function QuoteList() {
+function QuoteList({ userId }) {
   const GET_QUOTES = gql`
   {
-    quotes {
+    quotes(where: { owner: ${userId} }) {
       Quote
     }
   }

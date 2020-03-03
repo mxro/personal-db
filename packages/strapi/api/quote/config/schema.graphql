@@ -1,0 +1,13 @@
+module.exports = {
+  resolver: {
+    Query: {
+      quotes: {
+        description: "Obtains a list of quotes",
+        resolver: "Quote.find",
+        policies: ["global.isOwnerGraphQl"]
+      }
+    },
+    Mutation: {
+    },
+  },
+};

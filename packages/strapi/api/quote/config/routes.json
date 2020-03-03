@@ -5,7 +5,9 @@
       "path": "/quotes",
       "handler": "quote.find",
       "config": {
-        "policies": []
+        "policies": [
+          "global.isOwner"
+        ]
       }
     },
     {
@@ -21,7 +23,9 @@
       "path": "/quotes/:id",
       "handler": "quote.findOne",
       "config": {
-        "policies": []
+        "policies": [
+          "global.isOwner"
+        ]
       }
     },
     {
