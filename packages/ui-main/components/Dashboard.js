@@ -11,7 +11,7 @@ function Dashboard() {
   return <Container>
     <Col>
       <Row>
-        <QuoteList userId={1} ></QuoteList>
+        <QuoteList userId={id} ></QuoteList>
       </Row>
     </Col>
   </Container>

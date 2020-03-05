@@ -8,10 +8,9 @@
 var pluralize = require('pluralize')
 
 module.exports = async (ctx, next) => {
-  strapi.log.info('check owner ', ctx.state.user);
 
+  // always allow for Administrator
   if (ctx.state.user && ctx.state.user.role.name === 'Administrator') {
-    // Go to next policy or will reach the controller's action.
     return await next();
   }
 
@@ -24,7 +23,7 @@ module.exports = async (ctx, next) => {
     if (typeof id === "undefined" || id === null) {
       return ctx.unauthorized(`${errMsg} [1]`);
     }
-    // [find, count] Only query entities that owned by the current user
+
     if (ctx.request.method === 'GET' || ctx.request.method === 'POST') {
       for (let key in ctx.query) {
         if (key.includes("owner")) {
@@ -35,7 +34,6 @@ module.exports = async (ctx, next) => {
         }
       }
 
-      strapi.log.info(ctx.query);
       // Always set owner.id to current user id
       ctx.query = Object.assign({ 'owner.id': id }, ctx.query);
     }
@@ -63,14 +61,9 @@ module.exports = async (ctx, next) => {
       ctx.request.body.owner = id.toString();
     }
 
-    // [create] Set owner for a new entity
-    // if (ctx.request.method === 'POST') {
-    //   ctx.request.body.owner = id.toString();
-    // }
-
     await next();
 
-    // [find.one] Only query entities that owned by the current user
+    // [find.one] Only query entities that are owned by the current user
     if (ctx.request.method === 'GET' || ctx.request.method === 'POST') {
       if (Object.prototype.toString.call(ctx.response.body) === '[object Object]') {
         if (typeof ctx.response.body.owner === "undefined" || ctx.response.body.owner === null || typeof ctx.response.body.owner.id === "undefined" || ctx.response.body.owner.id === null || ctx.response.body.owner.id.toString() !== id.toString()) {
