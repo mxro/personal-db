@@ -1,4 +1,15 @@
+## Start strapi API server
 
+```
+cd packages/strapi
+yarn develop
+```
+
+## Import to Database
+
+(This avoids importing duplicate quotes)
+
+Use packages/import-kindle-quotes.
 
 ## Export from DB Browser for SQLite
 
