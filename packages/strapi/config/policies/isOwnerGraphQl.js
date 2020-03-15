@@ -5,7 +5,7 @@
 
 // from https://github.com/strapi/strapi/issues/624#issuecomment-558666801
 
-var pluralize = require('pluralize')
+var pluralize = require('pluralize');
 
 module.exports = async (ctx, next) => {
 

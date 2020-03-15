@@ -5,9 +5,7 @@
       "path": "/quotes",
       "handler": "quote.find",
       "config": {
-        "policies": [
-          "global.isOwner"
-        ]
+        "policies": []
       }
     },
     {
@@ -23,9 +21,7 @@
       "path": "/quotes/:id",
       "handler": "quote.findOne",
       "config": {
-        "policies": [
-          "global.isOwner"
-        ]
+        "policies": []
       }
     },
     {
@@ -33,9 +29,7 @@
       "path": "/quotes",
       "handler": "quote.create",
       "config": {
-        "policies": [
-          "global.isOwner"
-        ]
+        "policies": []
       }
     },
     {
@@ -43,9 +37,7 @@
       "path": "/quotes/:id",
       "handler": "quote.update",
       "config": {
-        "policies": [
-          "global.isOwner"
-        ]
+        "policies": []
       }
     },
     {
@@ -53,9 +45,7 @@
       "path": "/quotes/:id",
       "handler": "quote.delete",
       "config": {
-        "policies": [
-          "global.isOwner"
-        ]
+        "policies": []
       }
     }
   ]
