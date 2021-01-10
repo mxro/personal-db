@@ -5,6 +5,11 @@ cd packages/strapi
 yarn develop
 ```
 
+Login with
+
+mxro.2019@gmail.com
+strapidummy
+
 ## Import to Database
 
 (This avoids importing duplicate quotes)
@@ -29,3 +34,4 @@ Replace id with the last id imported
 
 Export the quote_export table to CSV
 
+Go to Notion and Merge the CSV with the Quotes Table.
