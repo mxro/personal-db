@@ -22,7 +22,8 @@ async function run() {
 
   console.log(`Total quotes found in input ${data.length}`);
   const uniqueData = data.filter((row) => 
-    !clippingsOld.find((clipping) => clipping.Quote === row.quote)
+    !clippingsOld.find((clipping) => clipping.Quote === row.quote) &&
+      !clippingsOld.find((clipping) => clipping.Quote.replaceAll('"', '\'') === row.quote)
   );
 
   console.log(`Total unique quotes found ${uniqueData.length}`);
