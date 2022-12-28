@@ -31,7 +31,7 @@ async function run() {
   const importTimestamp = new Date();
   const newData = uniqueData.map((c) => (
    { Author: `"${c.author}"`,
-    Quote: `"${c.quote}"`,
+    Quote: `"${c.quote.replaceAll('"', '\'')}"`,
     Book: `"${c.book}"`,
     Created: `"${moment(new Date().toISOString()).format("MMMM D, YYYY h:mm a")}"`,
     Collected: `"${moment(c.dateAdded.toISOString()).format("MMMM D, YYYY h:mm a")}"`,
