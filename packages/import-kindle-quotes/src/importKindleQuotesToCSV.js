@@ -35,7 +35,7 @@ async function run() {
     Quote: `"${c.quote.replaceAll('"', '\'')}"`,
     Book: `"${c.book}"`,
     Created: `"${moment(new Date().toISOString()).format("MMMM D, YYYY h:mm a")}"`,
-    Collected: `"${moment(c.dateAdded.toISOString()).format("MMMM D, YYYY h:mm a")}"`,
+    Collected: `"${moment(c.dateAdded.toISOString()).format("MMMM D, YYYY")}"`,
     Location: `"${c.page + ' ' + c.location}"`,
     RawSource: `"Kindle Import Timestamp ${importTimestamp.getTime()}"`,
   }));

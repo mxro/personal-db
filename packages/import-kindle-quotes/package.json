@@ -1,13 +1,13 @@
 {
   "name": "import-kindle-quotes",
   "version": "0.1.0",
-  "main": "src/importKindleQuotes.js",
+  "main": "src/importKindleQuotesToCSV.js",
   "license": "MIT",
   "scripts": {
-    "start": "node src/importKindleQuotes.js"
+    "start": "node src/importKindleQuotesToCSV.js"
   },
   "bin": {
-    "import-kindle-quotes": "src/importKindleQuotes.js"
+    "import-kindle-quotes": "src/importKindleQuotesToCSV.js"
   },
   "dependencies": {
     "csv": "^5.5.3",
