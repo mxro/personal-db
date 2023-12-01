@@ -40,11 +40,6 @@ async function run() {
     RawSource: `"Kindle Import Timestamp ${importTimestamp.getTime()}"`,
   }));
 
-  console.log(uniqueData[103]);
-  console.log(clippingsOld[500]);
-  console.log(newData[102]);
-
-
   const columns = 'Author,Quote,Book,Tags,Rating,Location,Link,Collected,RawSource,Created,id'.split(',');
 
   let output = '';
@@ -52,7 +47,6 @@ async function run() {
 
   output += newData.map((row) => columns.map((column) => row[column] || '').join(',')).join('\n');
 
-  //console.log(output);
   fs.writeFileSync('output.csv', output);
 
 };
