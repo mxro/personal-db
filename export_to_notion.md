@@ -6,7 +6,7 @@
 2. Rename to export.csv and move to packages/import-kindle-quotes
 3. Grab My Clippings.txt from Kindle and place into same folder
 4. Run node src/importKindleQuotesToCSV.js in the same folder
-5. Get output.csv and merge this with the file on Kindle
+5. Get output.csv and merge this with the database on Notion
 
 # Legacy approach using Strapi
 
